@@ -1,0 +1,15 @@
+{
+  "name": "typescript-oop",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "dist/main.js",
+  "scripts": {
+    "ts:watch": "tsc -w",
+    "node:watch": "node --watch dist/main.js",
+    "dev": "concurrently \"npm run ts:watch\" \"npm run node:watch\""
+  },
+  "devDependencies": {
+    "concurrently": "^10.0.6"
+  }
+}
