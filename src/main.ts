@@ -80,11 +80,10 @@ class Note {
 
 class NoteBook {
     public readonly id: number;
-    public notes: Note[];
+    private notes: Note[] = [];
 
-    constructor(id: number, notes: Note[]) {
+    constructor(id: number) {
         this.id = id;
-        this.notes = notes;
     }
 
     public addNote(note:Note): void {
@@ -99,9 +98,12 @@ class NoteBook {
         }
         return false;
     }
+    public getNotes(): readonly Note[] {
+        return [...this.notes];
+    }
 }
 
-class MyStorage<T>{
+class Storage<T>{
     public readonly id: number;
     public items: T[];
     constructor(id: number, items: T[]) {
@@ -120,8 +122,8 @@ class MyStorage<T>{
         return false;
     }
 
-    public getAllItems():void {
-        console.log(this.items);
+    public getAllItems():T[] {
+        return this.items;
     }
 }
 
